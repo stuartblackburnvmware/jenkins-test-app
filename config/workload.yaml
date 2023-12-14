@@ -24,8 +24,9 @@ spec:
     value:
       job-name: tanzu-java-web-app
       secret-name: jenkins-secret
-      job-params: [{name:GIT_URL, value:https://github.com/stuartblackburnvmware/jenkins-test-app}, {name:GIT_BRANCH, value:main}]
-      #job-params: "[{"name":"GIT_URL", "value":"https://github.com/stuartblackburnvmware/jenkins-test-app"}, {"name":"GIT_BRANCH", "value":"main"}]"
+      #job-params: [{name:GIT_URL, value:https://github.com/stuartblackburnvmware/jenkins-test-app}, {name:GIT_BRANCH, value:main}]
+      job-params: "[{\"name\":\"GIT_URL\", \"value\":\"https://github.com/stuartblackburnvmware/jenkins-test-app\"}, {\"name\":\"GIT_BRANCH\", \"value\":\"main\"}]"
+      #job-params: "[{\"name\":\"A\",\"value\":\"x\"},{\"name\":\"B\",\"value\":\"y\"},...]"
   source:
     git:
       url: https://github.com/stuartblackburnvmware/jenkins-test-app
