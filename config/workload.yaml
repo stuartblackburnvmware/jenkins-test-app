@@ -20,17 +20,12 @@ spec:
     value:
       apps.tanzu.vmware.com/pipeline: jenkins-pipeline
       apps.tanzu.vmware.com/language: java
-  #! Required: Passes parameters to pipeline
   - name: testing_pipeline_params
     value:
-
-      #! Required: Name of the Jenkins job
       job-name: tanzu-java-web-app
-
-      #! Required: The secret created earlier to access Jenkins
       secret-name: jenkins-secret
-
-      job-params: "[{"name":"GIT_URL", "value":"https://github.com/stuartblackburnvmware/jenkins-test-app"}, {"name":"GIT_BRANCH", "value":"main"}]"
+      job-params: [{name:GIT_URL, value:https://github.com/stuartblackburnvmware/jenkins-test-app}, {name:GIT_BRANCH, value:main}]
+      #job-params: "[{"name":"GIT_URL", "value":"https://github.com/stuartblackburnvmware/jenkins-test-app"}, {"name":"GIT_BRANCH", "value":"main"}]"
   source:
     git:
       url: https://github.com/stuartblackburnvmware/jenkins-test-app
