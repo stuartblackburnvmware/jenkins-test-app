@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: jenkins-test-app
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+  endpoint:
+    health:
+      show-details: always
