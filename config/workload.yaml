@@ -30,10 +30,6 @@ spec:
       #! Required: The secret created earlier to access Jenkins
       secret-name: jenkins-secret
 
-      #! Required: The `job-params` element is required, but the parameter string
-      #! might be empty. If empty, then set this value to `[]`.  If non-empty then the
-      #! value contains a JSON-encoded list of parameters to pass to the Jenkins job.
-      #! Ensure that the quotation marks inside the JSON-encoded string are escaped.
       job-params: "[{"name":"GIT_URL", "value":"https://github.com/stuartblackburnvmware/jenkins-test-app"}, {"name":"GIT_BRANCH", "value":"main"}]"
   source:
     git:
