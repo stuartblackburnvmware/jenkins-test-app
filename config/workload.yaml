@@ -22,7 +22,7 @@ spec:
       apps.tanzu.vmware.com/language: java
   - name: testing_pipeline_params
     value:
-      job-name: tanzu-java-web-app
+      job-name: tanzu-java-web--app
       secret-name: jenkins-secret
       #job-params: [{name:GIT_URL, value:https://github.com/stuartblackburnvmware/jenkins-test-app}, {name:GIT_BRANCH, value:main}]
       job-params: "[{\"name\":\"GIT_URL\", \"value\":\"https://github.com/stuartblackburnvmware/jenkins-test-app\"}, {\"name\":\"GIT_BRANCH\", \"value\":\"main\"}]"
