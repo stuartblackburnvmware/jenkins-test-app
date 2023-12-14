@@ -18,8 +18,23 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   - name: testing_pipeline_matching_labels
     value:
-      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/pipeline: jenkins-pipeline
       apps.tanzu.vmware.com/language: java
+  #! Required: Passes parameters to pipeline
+  - name: testing_pipeline_params
+    value:
+
+      #! Required: Name of the Jenkins job
+      job-name: tanzu-java-web-app
+
+      #! Required: The secret created earlier to access Jenkins
+      secret-name: jenkins-secret
+
+      #! Required: The `job-params` element is required, but the parameter string
+      #! might be empty. If empty, then set this value to `[]`.  If non-empty then the
+      #! value contains a JSON-encoded list of parameters to pass to the Jenkins job.
+      #! Ensure that the quotation marks inside the JSON-encoded string are escaped.
+      job-params: "[{"name":"GIT_URL", "value":"https://github.com/stuartblackburnvmware/jenkins-test-app"}, {"name":"GIT_BRANCH", "value":"main"}]"
   source:
     git:
       url: https://github.com/stuartblackburnvmware/jenkins-test-app
